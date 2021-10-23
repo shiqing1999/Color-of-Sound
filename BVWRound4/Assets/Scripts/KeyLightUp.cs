@@ -34,6 +34,7 @@ public class KeyLightUp : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         if (activeKey != -1)
             songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = unLitMat;
+        yield return new WaitForSeconds(0.2f);
         activeKey++;
         if(activeKey<songSequenceOfKeys.Length)
         {
