@@ -5,11 +5,12 @@ using UnityEngine;
 public class KeyLightUp : MonoBehaviour
 {
     [SerializeField] private GameObject[] keys;
-    [SerializeField] private Material unLitMat;
+    [SerializeField] private Material previousMat;
     [SerializeField] private Material litMat;
     [SerializeField] private float loadTime;
     [SerializeField] private int activeKey = -1;
     [SerializeField] private GameObject[] songSequenceOfKeys;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +25,10 @@ public class KeyLightUp : MonoBehaviour
         if(activeKey != -1)
         {
             if(keys[activeKey] != null)
-                keys[activeKey].GetComponent<MeshRenderer>().material = unLitMat;
+                keys[activeKey].GetComponent<MeshRenderer>().material = previousMat;
         }
         activeKey = Random.Range(0, keys.Length);
+        previousMat = keys[activeKey].GetComponent<MeshRenderer>().material;
         keys[activeKey].GetComponent<MeshRenderer>().material = litMat;
         StartCoroutine(RandomChangeKeyTexture(loadTime));
     }
@@ -36,14 +38,17 @@ public class KeyLightUp : MonoBehaviour
         if (activeKey != -1)
         {
             if (songSequenceOfKeys[activeKey] != null)
-                songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = unLitMat;
+                songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = previousMat;
         }   
         yield return new WaitForSeconds(0.2f);
         activeKey++;
         if(activeKey < songSequenceOfKeys.Length)
         {
-            if(songSequenceOfKeys[activeKey] != null)
+            if (songSequenceOfKeys[activeKey] != null)
+            {
+                previousMat = songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material;
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = litMat;
+            }
             StartCoroutine(SongChangeKeyTexture(loadTime));
         }
         
