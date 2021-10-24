@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class KeyController : MonoBehaviour
 {
+
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -15,4 +17,15 @@ public class KeyController : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        animator.SetBool("isDown", true);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        animator.SetBool("isDown", false);
+    }
+
+
 }
