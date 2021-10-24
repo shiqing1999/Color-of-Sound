@@ -23,7 +23,8 @@ public class KeyLightUp : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         if(activeKey != -1)
         {
-            keys[activeKey].GetComponent<MeshRenderer>().material = unLitMat;
+            if(keys[activeKey] != null)
+                keys[activeKey].GetComponent<MeshRenderer>().material = unLitMat;
         }
         activeKey = Random.Range(0, keys.Length);
         keys[activeKey].GetComponent<MeshRenderer>().material = litMat;
@@ -33,12 +34,16 @@ public class KeyLightUp : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         if (activeKey != -1)
-            songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = unLitMat;
+        {
+            if (songSequenceOfKeys[activeKey] != null)
+                songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = unLitMat;
+        }   
         yield return new WaitForSeconds(0.2f);
         activeKey++;
-        if(activeKey<songSequenceOfKeys.Length)
+        if(activeKey < songSequenceOfKeys.Length)
         {
-            songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = litMat;
+            if(songSequenceOfKeys[activeKey] != null)
+                songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = litMat;
             StartCoroutine(SongChangeKeyTexture(loadTime));
         }
         
