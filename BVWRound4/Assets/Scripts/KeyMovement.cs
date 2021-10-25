@@ -11,12 +11,13 @@ public class KeyMovement : MonoBehaviour
     [SerializeField] private float rotationChangeAmount;
     [SerializeField] private float positionChangeAmount;
     private Vector3 goalPos;
-
+    private Quaternion goalRot;
     // Start is called before the first frame update
     void Start()
     {
         startPos = this.transform.position;
         goalPos = this.transform.position - new Vector3(0f, positionChangeAmount, 0f);
+        goalRot = Quaternion.Euler(0f, 0f, rotationChangeAmount);
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class KeyMovement : MonoBehaviour
         if(keyDown)
         {
             transform.position = Vector3.MoveTowards(transform.position, goalPos, keySpeed * Time.deltaTime);
+            transform.Rotate(0, 0, positionChangeAmount);
             if(transform.position == goalPos)
             {
                 keyDown = false;
@@ -34,6 +36,7 @@ public class KeyMovement : MonoBehaviour
         else if(keyUp)
         {
             transform.position = Vector3.MoveTowards(transform.position, startPos, keySpeed * Time.deltaTime);
+            transform.Rotate(0, 0, -positionChangeAmount);
             if (transform.position == startPos)
                 keyUp = false;
         }
