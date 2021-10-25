@@ -8,14 +8,28 @@ public class KeyLightUp : MonoBehaviour
     [SerializeField] private Material previousMat;
     [SerializeField] private Material litMat;
     [SerializeField] private float loadTime;
+    [SerializeField] private float StartUpLoadTime;
     [SerializeField] private int activeKey = -1;
     [SerializeField] private GameObject[] songSequenceOfKeys;
+    [SerializeField] private bool currentNotePlayed = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
         //StartCoroutine(RandomChangeKeyTexture(loadTime));
+        StartCoroutine(StartUpWait(StartUpLoadTime));
+    }
+
+    public void CheckNotePlayable(GameObject keyHit)
+    {
+        if(keyHit == songSequenceOfKeys[activeKey] && keyHit.GetComponent<MeshRenderer>().material == litMat)
+            currentNotePlayed = true;
+    }
+
+    IEnumerator StartUpWait(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
         StartCoroutine(SongChangeKeyTexture(loadTime));
     }
 
@@ -38,14 +52,19 @@ public class KeyLightUp : MonoBehaviour
         if (activeKey != -1)
         {
             if (songSequenceOfKeys[activeKey] != null)
+            {
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = previousMat;
+                if(currentNotePlayed)
+                    songSequenceOfKeys[activeKey].GetComponent<AudioSource>().Play();
+            }
         }   
-        yield return new WaitForSeconds(0.2f);
+        //yield return new WaitForSeconds(0.2f);
         activeKey++;
         if(activeKey < songSequenceOfKeys.Length)
         {
             if (songSequenceOfKeys[activeKey] != null)
             {
+                currentNotePlayed = false;
                 previousMat = songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material;
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = litMat;
             }
