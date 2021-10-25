@@ -573,6 +573,8 @@ MonoBehaviour:
   - {fileID: 4262787526321428751}
   - {fileID: 5194334309926487415}
   currentNotePlayed: 0
+  hands: []
+  notePlayMode: 0
 --- !u!65 &297848988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1469,8 +1471,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.82
-  m_Range: 48.15
+  m_Intensity: 1.17
+  m_Range: 103.3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1527,7 +1529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722631060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.88, y: 2.74, z: -0.9639983}
+  m_LocalPosition: {x: -1.88, y: 2.29, z: -0.9639983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2272,6 +2274,8 @@ MonoBehaviour:
   - {fileID: 7085144840425000846}
   - {fileID: 1234113431070247513}
   currentNotePlayed: 0
+  hands: []
+  notePlayMode: 0
 --- !u!4 &2067550911
 Transform:
   m_ObjectHideFlags: 0
