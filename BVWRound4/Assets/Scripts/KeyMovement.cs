@@ -26,7 +26,7 @@ public class KeyMovement : MonoBehaviour
         if(keyDown)
         {
             transform.position = Vector3.MoveTowards(transform.position, goalPos, keySpeed * Time.deltaTime);
-            transform.Rotate(0, 0, positionChangeAmount);
+            transform.Rotate(0, 0, rotationChangeAmount * Time.deltaTime);
             if(transform.position == goalPos)
             {
                 keyDown = false;
@@ -36,7 +36,7 @@ public class KeyMovement : MonoBehaviour
         else if(keyUp)
         {
             transform.position = Vector3.MoveTowards(transform.position, startPos, keySpeed * Time.deltaTime);
-            transform.Rotate(0, 0, -positionChangeAmount);
+            transform.Rotate(0, 0, -rotationChangeAmount * Time.deltaTime);
             if (transform.position == startPos)
                 keyUp = false;
         }
