@@ -23,13 +23,17 @@ public class KeyLightUp : MonoBehaviour
         //StartCoroutine(RandomChangeKeyTexture(loadTime));
         StartCoroutine(StartUpWait(StartUpLoadTime));
     }
-
+    void PlayNote()
+    {
+        songSequenceOfKeys[activeKey].GetComponent<AudioSource>().Play();
+        songSequenceOfKeys[activeKey].GetComponent<KeyMovement>().PlayKey();
+    }
     public void CheckNotePlayable(GameObject keyHit)
     {
         if (keyHit == songSequenceOfKeys[activeKey])
         {
-            if(notePlayMode == PlayMode.PM_OnTouch && !currentNotePlayed)
-                songSequenceOfKeys[activeKey].GetComponent<AudioSource>().Play();
+            if (notePlayMode == PlayMode.PM_OnTouch && !currentNotePlayed)
+                PlayNote();
             currentNotePlayed = true;
         }         
     }
@@ -77,7 +81,7 @@ public class KeyLightUp : MonoBehaviour
                 songSequenceOfKeys[activeKey].GetComponent<BoxCollider>().enabled = false;
 
                 if (currentNotePlayed)
-                    songSequenceOfKeys[activeKey].GetComponent<AudioSource>().Play();
+                    PlayNote();
             }
         }   
         //yield return new WaitForSeconds(0.2f);
@@ -117,7 +121,7 @@ public class KeyLightUp : MonoBehaviour
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = litMat;
                 songSequenceOfKeys[activeKey].GetComponent<BoxCollider>().enabled = true;
             }
-            StartCoroutine(SongChangeKeyTexture(loadTime));
+            StartCoroutine(PlayNoteOnTouch(loadTime));
         }
 
     }
@@ -130,7 +134,9 @@ public class KeyLightUp : MonoBehaviour
             {
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = previousMat;
                 if (hands[0].GetComponent<HandTouchKey>().touchingKey || hands[1].GetComponent<HandTouchKey>().touchingKey)
-                    songSequenceOfKeys[activeKey].GetComponent<AudioSource>().Play();
+                    PlayNote();
+                hands[0].GetComponent<HandTouchKey>().touchingKey = false;
+                hands[1].GetComponent<HandTouchKey>().touchingKey = false;
                 songSequenceOfKeys[activeKey].GetComponent<BoxCollider>().enabled = false;
             }
         }
@@ -145,7 +151,7 @@ public class KeyLightUp : MonoBehaviour
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = litMat;
                 songSequenceOfKeys[activeKey].GetComponent<BoxCollider>().enabled = true;
             }
-            StartCoroutine(SongChangeKeyTexture(loadTime));
+            StartCoroutine(PressKeyAtEndOfNote(loadTime));
         }
 
     }
