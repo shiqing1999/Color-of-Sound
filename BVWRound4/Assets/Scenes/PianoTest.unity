@@ -440,11 +440,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278853615}
   m_LocalRotation: {x: 0.24184473, y: 0.66446304, z: -0.24184473, w: 0.66446304}
-  m_LocalPosition: {x: 0.82, y: 1.628, z: -0.549}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.164, y: 0.3256, z: -0.1098}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1007849716}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 40, y: 90, z: 0}
 --- !u!114 &297848987
 MonoBehaviour:
@@ -503,6 +503,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentNotePlayed: 0
+  hands:
+  - {fileID: 934529601}
+  - {fileID: 978655952}
 --- !u!1 &317721393 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1227312057151374824, guid: 6fbe22490eb92c14892c88d56b7e1485, type: 3}
@@ -1336,7 +1339,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2.42
+  m_Radius: 0.05554971
   m_Height: 0.23114163
   m_Direction: 2
   m_Center: {x: -0.03248951, y: 0.026315257, z: 0.022052988}
@@ -1463,6 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pianoObject: {fileID: 919132149453286707}
+  touchingKey: 0
 --- !u!1 &978655952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,7 +1586,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2.42
+  m_Radius: 0.05554971
   m_Height: 0.20925058
   m_Direction: 2
   m_Center: {x: 0.040739775, y: 0.026315257, z: 0.011107467}
@@ -1709,6 +1713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pianoObject: {fileID: 919132149453286707}
+  touchingKey: 0
 --- !u!1 &986800222 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7096344535727177791, guid: 6fbe22490eb92c14892c88d56b7e1485, type: 3}
@@ -1859,7 +1864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1007849714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1886,6 +1891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pianoObject: {fileID: 919132149453286707}
+  touchingKey: 0
 --- !u!4 &1007849716
 Transform:
   m_ObjectHideFlags: 0
@@ -1896,9 +1902,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 278853618}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1007849717
 Rigidbody:
@@ -3086,7 +3093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1826703248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3128,12 +3135,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826703247}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.3367204, y: 0, z: -0.031529427}
+  m_LocalPosition: {x: 1.244, y: 1.1074, z: -0.725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1058103509}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1841906452 stripped
 GameObject:
