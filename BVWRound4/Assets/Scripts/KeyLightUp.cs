@@ -117,7 +117,7 @@ public class KeyLightUp : MonoBehaviour
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = litMat;
                 songSequenceOfKeys[activeKey].GetComponent<BoxCollider>().enabled = true;
             }
-            StartCoroutine(SongChangeKeyTexture(loadTime));
+            StartCoroutine(PlayNoteOnTouch(loadTime));
         }
 
     }
@@ -145,7 +145,7 @@ public class KeyLightUp : MonoBehaviour
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = litMat;
                 songSequenceOfKeys[activeKey].GetComponent<BoxCollider>().enabled = true;
             }
-            StartCoroutine(SongChangeKeyTexture(loadTime));
+            StartCoroutine(PressKeyAtEndOfNote(loadTime));
         }
 
     }
