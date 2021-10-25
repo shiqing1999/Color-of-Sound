@@ -22,6 +22,7 @@ public class KeyController : MonoBehaviour
     {
         animator.SetBool("isDown", true);
     }
+
     private void OnTriggerExit(Collider other)
     {
         animator.SetBool("isDown", false);
