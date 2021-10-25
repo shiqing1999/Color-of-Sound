@@ -23,7 +23,7 @@ public class KeyLightUp : MonoBehaviour
 
     public void CheckNotePlayable(GameObject keyHit)
     {
-        if(keyHit == songSequenceOfKeys[activeKey] && keyHit.GetComponent<MeshRenderer>().material == litMat)
+        if (keyHit == songSequenceOfKeys[activeKey])
             currentNotePlayed = true;
     }
 
@@ -54,7 +54,9 @@ public class KeyLightUp : MonoBehaviour
             if (songSequenceOfKeys[activeKey] != null)
             {
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = previousMat;
-                if(currentNotePlayed)
+                songSequenceOfKeys[activeKey].GetComponent<BoxCollider>().enabled = false;
+
+                if (currentNotePlayed)
                     songSequenceOfKeys[activeKey].GetComponent<AudioSource>().Play();
             }
         }   
@@ -62,11 +64,12 @@ public class KeyLightUp : MonoBehaviour
         activeKey++;
         if(activeKey < songSequenceOfKeys.Length)
         {
+            currentNotePlayed = false;
             if (songSequenceOfKeys[activeKey] != null)
             {
-                currentNotePlayed = false;
                 previousMat = songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material;
                 songSequenceOfKeys[activeKey].GetComponent<MeshRenderer>().material = litMat;
+                songSequenceOfKeys[activeKey].GetComponent<BoxCollider>().enabled = true;
             }
             StartCoroutine(SongChangeKeyTexture(loadTime));
         }
