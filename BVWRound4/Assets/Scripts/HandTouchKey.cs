@@ -25,9 +25,7 @@ public class HandTouchKey : MonoBehaviour
     {
         if (other.tag == "White Key")
         {
-            Debug.Log("Stop");
-            touchingKey = false;
-            pianoObject.GetComponent<KeyLightUp>().CheckNotePlayable(other.gameObject);
+            touchingKey = false;    
         }
     }
 }
