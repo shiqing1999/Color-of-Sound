@@ -288,8 +288,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &106040167 stripped
 GameObject:
@@ -342,8 +342,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &220747365 stripped
 GameObject:
@@ -672,8 +672,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &323640425 stripped
 GameObject:
@@ -708,8 +708,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &413666423 stripped
 GameObject:
@@ -840,8 +840,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &421436260 stripped
 GameObject:
@@ -894,8 +894,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &604774294 stripped
 GameObject:
@@ -930,8 +930,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1001 &697616756
 PrefabInstance:
@@ -1307,8 +1307,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &734066173 stripped
 GameObject:
@@ -1343,8 +1343,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &841823575 stripped
 GameObject:
@@ -1695,6 +1695,121 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &964512179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964512177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7012223b1e68c1a4a9eaec699bbda103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogClips:
+  - {fileID: 8300000, guid: e0f102c1952c0cf43b13793addf88e39, type: 3}
+  - {fileID: 8300000, guid: b19fa8895d935ca45b977754f5e190eb, type: 3}
+  - {fileID: 8300000, guid: 35ff22f675552aa47883d19076efed08, type: 3}
+  activeDialog: -1
+  loadTime: 10
+  StartUpLoadTime: 1
+--- !u!82 &964512180
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964512177}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &978655952
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,8 +2203,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &995357416 stripped
 GameObject:
@@ -2124,8 +2239,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1007849713
 GameObject:
@@ -2333,8 +2448,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1054548987 stripped
 GameObject:
@@ -2369,8 +2484,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1058103508
 GameObject:
@@ -2539,8 +2654,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1143316213 stripped
 GameObject:
@@ -2689,8 +2804,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1240817542 stripped
 GameObject:
@@ -2725,8 +2840,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1001 &1285393459
 PrefabInstance:
@@ -2854,8 +2969,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1380147960
 GameObject:
@@ -2992,8 +3107,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1442240157
 GameObject:
@@ -3157,8 +3272,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1528233673 stripped
 GameObject:
@@ -3325,8 +3440,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1647826761 stripped
 GameObject:
@@ -3886,8 +4001,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1761182937 stripped
 GameObject:
@@ -3922,8 +4037,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!4 &1787612246 stripped
 Transform:
@@ -4059,8 +4174,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1826703247
 GameObject:
@@ -4161,8 +4276,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1850515663 stripped
 GameObject:
@@ -4197,8 +4312,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!4 &1859247632 stripped
 Transform:
@@ -4274,8 +4389,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &1942016704 stripped
 GameObject:
@@ -4406,8 +4521,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1001 &1944352460
 PrefabInstance:
@@ -4521,8 +4636,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   keyDown: 0
   keyUp: 0
-  keySpeed: 0.05
-  rotationChangeAmount: 100
+  keySpeed: 0.15
+  rotationChangeAmount: 80
   positionChangeAmount: 0.02
 --- !u!1 &65702494809048590
 GameObject:
